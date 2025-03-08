@@ -24,6 +24,9 @@ class CMCHTTPClient(HTTPClient):
             return result["data"]
             
     async def get_currency(self, currency_id: int):
+        """
+        GET-request for a concrete crypto-currency
+        """
         async with self._session.get(
             "/v2/cryptocurrency/quotes/latest", 
             params={"id": currency_id}
