@@ -1,5 +1,6 @@
 # General
 * Project is just a own research of how to work with FastAPI & how to connect it with frontend.
+* Also it's a part/submodule of docker-compose repository: comming soon
 * Project is based on tutorials https://artemshumeiko.ru/
 
 # Used modules
