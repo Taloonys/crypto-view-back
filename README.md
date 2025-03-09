@@ -15,4 +15,4 @@
 * `pip install -r requirements.txt`
 * create `.env` file (there is `.env-template` example)
 * insert your api-key for `https://coinmarketcap.com/` right after `CMC_API_KEY=`
-* start server by running `uvicorn src.main:app --port=<desired port, by default it's 8000>
+* start server by running `uvicorn src.main:app --port=<desired port, by default it's 8000>`
