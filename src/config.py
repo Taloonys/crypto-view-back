@@ -1,17 +1,22 @@
-from pydantic_settings import BaseSettings, SettingsConfigDict
-"""
-CMC - stands for CoinMarketCap
-It's a data source i would stick to.
-"""
+import os
 
 
-class Settings(BaseSettings):
+API_KEY: str
+
+
+api_key_file = os.getenv('API_KEY_FILE', 'r')
+if not api_key_file: 
+    raise ValueError("API_KEY_FILE env variable")
+
+try:
     """
-    Just grab API-key from environment variables
+    Char OS (File generated in Unix)
     """
-    CMC_API_KEY: str
-    
-    model_config = SettingsConfigDict(env_file=".env")
-
-
-settings = Settings()
+    with open(api_key_file, 'r', encoding='utf-8') as f:
+            API_KEY = f.read().strip()
+except UnicodeDecodeError:
+    """
+    Wide-char OS (File generated in Windows)
+    """
+    with open(api_key_file, 'r', encoding='utf-16') as f:
+        API_KEY = f.read().strip()

@@ -3,9 +3,8 @@ from src.target_client import cmc_client
 
 
 router = APIRouter(
-    prefix="/cryptocurrencies"
+    prefix="/cryptocurrencies/api/v1"
 )
-
 
 @router.get("")
 async def get_currencies():
